@@ -28,38 +28,36 @@ const getDiscountedProductAveragePriceFP = (inventory : Product[]) : number => {
 
 
 ### Explanation of the Function:
-At first, we define the function, which takes an array of products as input and returns the avg we want to calculate. Inside we create a const named discounted by applying the *filter* function to keep only the products that is discounted. then we use a condetional expression - if we get an empty array, return 0, else we calculate the avg and return it.
+At first, we define the function, which takes an array of products as input and returns the avg we want to calculate. Inside we create a const named discounted by applying the *filter* function to keep only the products that are discounted. Then we use a conditional expression - if we get an empty array, return 0, else we calculate the avg and return it.
 
 ##  Question 1.3
 ```java 
-1.<T> (x : T[], y : (item : T => boolean) => boolean;
+1.<T> (x : T[], y : (item : T) => boolean)=> boolean;
 ```
-explenation : 'x' is an array of a generic type T. 'y' is a function that takes an item of type T and returns a boolean. The method *some* always returns a boolean answer.
+explanation : 'x' is an array of a generic type T. 'y' is a function that takes an item of type T and returns a boolean. The method *some* always returns a boolean answer.
 
 ```java 
 2.(x : number[]) => number[];
 ```
-explenation : Because of the arithmetic multiplication (y*2) the elements in the array are forced to be numbers. map will therefore return an array of numbers.
+explanation : Because of the arithmetic multiplication (y*2) the elements in the array are forced to be numbers. map will therefore return an array of numbers.
 
 ```java 
-3.<T> (x : T[], y : (item : T) = > boolean) => T[];
+3.<T> (x : T[], y : (item : T) => boolean) => T[];
 ```
-explenation : 'x' is an array of a generic type T. 'y' is a function that takes an item of type T and returns a boolean. The method *filter* always returns a new array of the same generic type T.
+explanation : 'x' is an array of a generic type T. 'y' is a function that takes an item of type T and returns a boolean. The method *filter* always returns a new array of the same generic type T.
 
 ```java 
 4.(x : number[]) => number
 ```
-explenation : Because of the arithmetic accumulation of the elements in the *reduce* function (with the +) 'x' has to be an array of numbers.
+explanation : Because of the arithmetic accumulation of the elements in the *reduce* function (with the +) 'x' has to be an array of numbers.
 
 ```java 
 5.<T>(x:boolean,y:T[]) => T;
 ```
-explenation : 'x' is used as a condition (before the ? mark) so it must be a boolean. 'y' is an array from which we extract elements, so it's an array of a generic type. The function  returns a single element of type T.
+explanation : 'x' is used as a condition (before the ? mark) so it must be a boolean. 'y' is an array from which we extract elements, so it's an array of a generic type. The function  returns a single element of type T.
 
 ```java 
-6.<T,S>((f : (val : T) => S),(g : (num : number) => T) => ((x : number) => S)
+6.<T, S>(f: (val: T) => S, g: (num: number) => T) => (x: number) => S
 ```
 
-explenation : 'x' + 1 means 'x' must be a number. 'g' recives a number and returns a generic type T. The function f recives T and returns another generic type S.
-
-
+explanation : 'x' + 1 means 'x' must be a number. 'g' receives a number and returns a generic type T. The function f receives T and returns another generic type S.
