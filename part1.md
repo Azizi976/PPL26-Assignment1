@@ -1,15 +1,17 @@
-## Part 1: Theoretical Questions
+# Part 1: Theoretical Questions
 
-Submit the solution to this part as `part1.md`.
+## Question 1.1
 
-### [25 points] Question 1.1
+**1. Explanation of the Paradigms:**
+* **Imperative:** This paradigm is about telling the computer exactly *how* to achieve a goal, step by step. You write a sequence of instructions that explicitly change the program's state over time, heavily relying on variables, loops, and conditional statements.
+* **Object-Oriented (OO):** The program is based on defining objects and passing messages between them (methods).
+* **Functional:** The program is an expression or a series of expressions. The execution of the program is carried out by evaluating the expressions, and there are no assignment operations (there are no side-effects).
 
-1. Explain in simple words the following programming paradigms:
-   1. [5 points] Imperative
-   1. [5 points] Object Oriented
-   1. [5 points] Functional
-1. [5 points] How does the object oriented paradigm improve over the imperative paradigm?
-1. [5 points] How does the functional paradigm improve over the object oriented paradigm?
+**2. How does Object-Oriented (OO) improve upon Imperative?**
+Imperative approaches suffer from repetition and make it difficult to separate logic from data. Because there is a "shared mutable state," the logic becomes complex, creating real difficulties in verifying code correctness or performing optimizations and concurrency. Object-Oriented solves this by organizing the program around the objects that communicate with each other (methods), which brings order to the data structures and the logic.
+
+**3. How does Functional improve upon Object-Oriented?**
+The main advantage of functional programming is the absence of assignment operations (which causes side-effects) and shared mutable states. Without a shared state that constantly updates, it becomes easier to prove code correctness and safely run code in parallel (concurrency).
 
 ### [10 points] Question 1.2
 
