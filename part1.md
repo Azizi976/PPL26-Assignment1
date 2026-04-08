@@ -3,8 +3,11 @@
 ## Question 1.1
 
 **1. Explanation of the Paradigms:**
+
 * **Imperative:** This paradigm is about telling the computer exactly *how* to achieve a goal, step by step. You write a sequence of instructions that explicitly change the program's state over time, heavily relying on variables, loops, and conditional statements.
+
 * **Object-Oriented (OO):** The program is based on defining objects and passing messages between them (methods).
+
 * **Functional:** The program is an expression or a series of expressions. The execution of the program is carried out by evaluating the expressions, and there are no assignment operations (there are no side-effects).
 
 **2. How does Object-Oriented (OO) improve upon Imperative?**
@@ -13,44 +16,16 @@ Imperative approaches suffer from repetition and make it difficult to separate l
 **3. How does Functional improve upon Object-Oriented?**
 The main advantage of functional programming is the absence of assignment operations (which causes side-effects) and shared mutable states. Without a shared state that constantly updates, it becomes easier to prove code correctness and safely run code in parallel (concurrency).
 
-### [10 points] Question 1.2
+### Question 1.2
 
-Consider the following TypeScript function, which calculates the average price of all discounted products in a given inventory.
+const getDiscountedProductAveragePriceFP = (inventory : Product[]) : number => {
+    const discounted = inventory.filter(product => product.discounted);
+    return discounted.length === 0 ? 0 :
+    discounted.map(p => p.price).reduce((acc,curr) => acc + curr,0)/discounted.length;
+}
 
-```ts
-type Product = {
-  name: string;
-  price: number;
-  discounted: boolean;
-};
-
-const getDiscountedProductAveragePrice = (inventory: Product[]): number => {
-  let discountedPriceSum = 0;
-  let discountedProductsCount = 0;
-
-  for (const product of inventory) {
-    if (product.discounted) {
-      discountedPriceSum += product.price;
-      discountedProductsCount++;
-    }
-  }
-
-  if (discountedProductsCount === 0) {
-    return 0;
-  }
-
-  return discountedPriceSum / discountedProductsCount;
-};
-```
-
-This function uses an imperative approach with loops and conditional statements.
-
-Refactor the function `getDiscountedProductAveragePrice` to adhere to the Functional Programming paradigm. Utilize the built-in array methods `map`, `filter`, and `reduce` to achieve the same functionality without explicit iteration and conditional checks.
-Write the new function under the name `getDiscountedProductAveragePriceFP`.
-
-**Important**: the new function should have the same signature.
-
-**Note**: there are no tests for this question, and it will not be executed. The task here is to write the code in a functional way.
+** Explanation of the Function: **
+At first, we define the function, which takes an array of products as input and returns the avg we want to calculate. Inside we create a const named discounted by applying the *filter* function to keep only the products that is discounted. then we use a condetional expression - if we get an empty array, return 0, else we calculate the avg and return it.
 
 ### [18 points] Question 1.3
 
