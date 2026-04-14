@@ -19,10 +19,9 @@ The main advantage of functional programming is the absence of assignment operat
 ## Question 1.2
 
 ```java
-const getDiscountedProductAveragePriceFP = (inventory : Product[]) : number => {
+const getDiscountedProductAveragePriceFP = (inventory: Product[]): number => {
     const discounted = inventory.filter(product => product.discounted);
-    return discounted.length === 0 ? 0 :
-    discounted.map(p => p.price).reduce((acc,curr) => acc + curr,0)/discounted.length;
+    return discounted.reduce((acc, curr, _, arr) => acc + (curr.price / arr.length), 0);
 }
 ```
 
