@@ -4,7 +4,7 @@
 ; Pre-conditions: list is not empty
 ; Tests: 
 ; (last-item '(1 2 3)) => 3
-; (last-item '(1) => 1
+; (last-item '(1) => 1)
 (define last-item
  (λ (lst)
      (if (null? (cdr lst))
@@ -56,7 +56,7 @@
 ; Tests:
 ;(deep-reverse-recursive '(1 2 3) '()) => '(3 2 1)
 ;(deep-reverse-recursive '(1 (2 3)) '()) => '((3 2) 1)
-;(deep-reverse-recursive '(1 (2 3) (4 5) '()) => `((5 4) (3 2) 1)
+;(deep-reverse-recursive '(1 (2 3) (4 5) '()) => `((5 4) (3 2) 1))
 
 (define deep-reverse-recursive
   (lambda (lst result)
@@ -73,9 +73,8 @@
 ; Tests:
 ;(deep-reverse '(1 2 3)) => '(3 2 1)
 ;(deep-reverse '(1 (2 3))) => '((3 2) 1)
-;(deep-reverse '(1 (2 3) (4 5)) => `((5 4) (3 2) 1)
+;(deep-reverse '(1 (2 3) (4 5)) => `((5 4) (3 2) 1))
 
 (define deep-reverse
   (lambda (lst)
     (deep-reverse-recursive lst '())))
-
