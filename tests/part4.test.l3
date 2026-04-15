@@ -1,6 +1,7 @@
 #lang racket
 (require rackunit)
 (require rackunit/text-ui)
+(require "../src/part4.l3")
 
 (define tests
     (test-suite "Assignment 1 - Part 4"
