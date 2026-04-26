@@ -72,7 +72,7 @@
 )
 
 ; Signature: deep-reverse(lst)
-; Type: [List(Any) -> List(Any)]
+; Type: [List(t1) -> List(t1)]
 ; Purpose: reverses the elements of lst deeply
 ; Pre-conditions: true
 ; Tests:
